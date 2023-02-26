@@ -47,6 +47,13 @@
 
     keymap {
             compatible = "zmk,keymap";
+// 0 BASE LAYER
+// --------------------------------------------------------------------------------------------------------
+// |    Q   |    W   |    F   |     P   |     B    |-----|     J    |     L     |   U    |   Y    | APOS  |
+// | LGUI A | LALT R | LCTL S | LSHT T  |     G    |-----|     M    |  LSHT N   | LCTL E | LALT I |   O   |
+// |    Z   |    X   |    C   |     D   |     V    |-----|     K    |     H     | COMMA  | PERIOD | SLASH |
+// ---------------------------| 1SYM BS | 2NUM SPC |-----| 3NAV ENT | 4FUNC TAB |--------------------------
+//                            ---------------------------------------------------
 
         base_layer {
             label = "base";
@@ -58,23 +65,40 @@
             >;
         };
 
+// 1 SYMS LAYER
+// --------------------------------------------------------------------------------
+// |      |      |      |            |-----| LPAR  | RPAR  | EXEL  | SQT  | AMP   |
+// | LGUI | LALT | LCTL | LSHT | ESC |-----| LBKT  | RBKT  | QMARK | SEMI | PIPE  |
+// |      | RALT |      | DEL  |     |-----|  LT   |  GT   |  AT   | HASH | CARET |
+// ---------------------|      |     |-----| GRAVE | PRCNT |-----------------------
+//                      ------------------------------------
+
         sym_layer {
             label = "syms";
             bindings = <
-            &none     &none     &none      &none      &none          &kp LBRC    &kp AMPS    &kp ASTRK    &kp LPAR     &kp RBRC
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp PLUS    &kp DLLR    &kp PRCNT    &kp CARET    &kp COLON
-            &none     &kp RALT  &none      &kp DEL    &none          &kp PIPE    &kp EXCL    &kp AT       &kp HASH     &kp TILDE
-                                           &none      &none          &kp UNDER   &kp RPAR
+            &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
+            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARk  &kp SEMI   &kp PIPE
+            &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
+                                           &none      &none          &kp GRAVE  &kp PRCNT
             >;
+
         };
+
+// 2 NUMS LAYER
+// ----------------------------------------------------------------------------------
+// |      |      |      | DLLR | PRCNT |-------| ASTR  |  N7  |  N8  |  N9  | MINUS |
+// | LGUI | LALT | LCTL | LSHT |  ESC  |-------| FSLH  |  N4  |  N5  |  N6  | PLUS  |
+// |      | RALT |      | DEL  |       |-------| BSLH  |  N1  |  N2  |  N3  | EQUAL |
+// ---------------------|      |       |-------| SPACE |  N0  |----------------------
+//                      ---------------------------------------
 
         num_layer {
             label = "nums";
             bindings = <
-            &none     &none     &none      &none       &none            &kp LBKT     &kp N7    &kp N8    &kp N9    &kp RBKT
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp COMMA        &kp EQUAL    &kp N4    &kp N5    &kp N6    &kp SCLN
-            &none     &kp RALT  &none      &kp PERIOD  &none            &kp BSLH     &kp N1    &kp N2    &kp N3    &kp GRAVE
-                                           &none       &none            &kp MINUS    &kp N0
+            &none     &none     &none      &kp DLLR    &kp PRCNT        &kp ASTR   &kp N7    &kp N8    &kp N9    &kp MINUS
+            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp ESC           &kp FSLH   &kp N4    &kp N5    &kp N6    &kp PLUS
+            &none     &kp RALT  &none      &kp DEL     &none             &kp BSLH   &kp N1    &kp N2    &kp N3    &kp EQUAL
+                                           &none       &none             &kp SPACE  &kp N0
             >;
         };
 
