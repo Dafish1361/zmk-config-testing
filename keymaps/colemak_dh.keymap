@@ -47,6 +47,7 @@
 
     keymap {
             compatible = "zmk,keymap";
+
 // 0 BASE LAYER
 // --------------------------------------------------------------------------------------------------------
 // |    Q   |    W   |    F   |     P   |     B    |-----|     J    |     L     |   U    |   Y    | APOS  |
@@ -55,15 +56,15 @@
 // ---------------------------| 1SYM BS | 2NUM SPC |-----| 3NAV ENT | 4FUNC TAB |--------------------------
 //                            ---------------------------------------------------
 
-        base_layer {
-            label = "base";
-            bindings = <
-            &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y        &kp APOS
-            &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M    &mt LSHFT N  &mt LCTRL E  &mt LALT I   &mt LGUI O
-            &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp PERIOD   &kp SLASH
-                                        &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
-            >;
-        };
+//        base_layer {
+//            label = "base";
+//            bindings = <
+//            &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y        &kp APOS
+//            &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M    &mt LSHFT N  &mt LCTRL E  &mt LALT I   &mt LGUI O
+//            &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp PERIOD   &kp SLASH
+//                                        &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
+//            >;
+//        };
 
 // 1 SYMS LAYER
 // --------------------------------------------------------------------------------
@@ -73,16 +74,15 @@
 // ---------------------|      |     |-----| GRAVE | PRCNT |-----------------------
 //                      ------------------------------------
 
-        sym_layer {
-            label = "syms";
-            bindings = <
-            &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARk  &kp SEMI   &kp PIPE
-            &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
-                                           &none      &none          &kp GRAVE  &kp PRCNT
-            >;
-
-        };
+//        sym_layer {
+//            label = "syms";
+//            bindings = <
+//            &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
+//            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARk  &kp SEMI   &kp PIPE
+//            &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
+//                                           &none      &none          &kp GRAVE  &kp PRCNT
+//            >;
+//        };
 
 // 2 NUMS LAYER
 // ----------------------------------------------------------------------------------
@@ -92,15 +92,15 @@
 // ---------------------|      |       |-------| SPACE |  N0  |----------------------
 //                      ---------------------------------------
 
-        num_layer {
-            label = "nums";
-            bindings = <
-            &none     &none     &none      &kp DLLR    &kp PRCNT        &kp ASTR   &kp N7    &kp N8    &kp N9    &kp MINUS
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp ESC           &kp FSLH   &kp N4    &kp N5    &kp N6    &kp PLUS
-            &none     &kp RALT  &none      &kp DEL     &none             &kp BSLH   &kp N1    &kp N2    &kp N3    &kp EQUAL
-                                           &none       &none             &kp SPACE  &kp N0
-            >;
-        };
+//        num_layer {
+//            label = "nums";
+//            bindings = <
+//            &none     &none     &none      &kp DLLR    &kp PRCNT         &kp ASTR   &kp N7    &kp N8    &kp N9    &kp MINUS
+//            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp ESC           &kp FSLH   &kp N4    &kp N5    &kp N6    &kp PLUS
+//            &none     &kp RALT  &none      &kp DEL     &none             &kp BSLH   &kp N1    &kp N2    &kp N3    &kp EQUAL
+//                                           &none       &none             &kp SPACE  &kp N0
+//            >;
+//        };
 
         nav_layer {
             label = "navi";
