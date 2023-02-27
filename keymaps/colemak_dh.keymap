@@ -56,15 +56,15 @@
 // ---------------------------| 1SYM BS | 2NUM SPC |-----| 3NAV ENT | 4FUNC TAB |--------------------------
 //                            ---------------------------------------------------
 
-//        base_layer {
-//            label = "base";
-//            bindings = <
-//            &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y        &kp APOS
-//            &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M    &mt LSHFT N  &mt LCTRL E  &mt LALT I   &mt LGUI O
-//            &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp PERIOD   &kp SLASH
-//                                        &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
-//            >;
-//        };
+        base_layer {
+            label = "base";
+            bindings = <
+            &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y        &kp APOS
+            &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M    &mt LSHFT N  &mt LCTRL E  &mt LALT I   &mt LGUI O
+            &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp PERIOD   &kp SLASH
+                                        &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
+            >;
+        };
 
 // 1 SYMS LAYER
 // --------------------------------------------------------------------------------
@@ -78,7 +78,7 @@
             label = "syms";
             bindings = <
             &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARk  &kp SEMI   &kp PIPE
+            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARK  &kp SEMI   &kp PIPE
             &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
                                            &none      &none          &kp GRAVE  &kp PRCNT
             >;
