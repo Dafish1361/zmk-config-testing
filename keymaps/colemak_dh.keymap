@@ -74,15 +74,15 @@
 // ---------------------|      |     |-----| GRAVE | PRCNT |-----------------------
 //                      ------------------------------------
 
-//        sym_layer {
-//            label = "syms";
-//            bindings = <
-//            &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
-//            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARk  &kp SEMI   &kp PIPE
-//            &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
-//                                           &none      &none          &kp GRAVE  &kp PRCNT
-//            >;
-//        };
+        sym_layer {
+            label = "syms";
+            bindings = <
+            &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
+            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARk  &kp SEMI   &kp PIPE
+            &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
+                                           &none      &none          &kp GRAVE  &kp PRCNT
+            >;
+        };
 
 // 2 NUMS LAYER
 // ----------------------------------------------------------------------------------
