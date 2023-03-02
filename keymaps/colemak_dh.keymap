@@ -22,31 +22,31 @@
 
 / {
 
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-         };
-        combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp BSPC>;
-        };
+  combos {
+    compatible = "zmk,combos";
+    combo_esc {
+      timeout-ms = <50>;
+      key-positions = <1 2>;
+      bindings = <&kp ESC>;
+     };
+    combo_bspc {
+      timeout-ms = <50>;
+      key-positions = <7 8>;
+      bindings = <&kp BSPC>;
     };
+  };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        cond_layer_mgmt {
-            if-layers = <NAV FUNC>;
-            then-layer = <UTIL>;
-        };
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
+    cond_layer_mgmt {
+        if-layers = <NAV FUNC>;
+        then-layer = <UTIL>;
     };
+  };
 
 
-    keymap {
-            compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
 
 // 0 BASE LAYER
 // ------------------------------------     ----------------------------------------
@@ -62,15 +62,15 @@
 //                  -------------------     --------------------
 //
 
-        base_layer {
-            label = "base";
-            bindings = <
-            &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J    &kp L        &kp U        &kp Y        &kp APOS
-            &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M    &mt LSHFT N  &mt LCTRL E  &mt LALT I   &mt LGUI O
-            &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K    &kp H        &kp COMMA    &kp PERIOD   &kp SLASH
-                                        &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
-            >;
-        };
+    base_layer {
+      label = "base";
+      bindings = <
+      &kp Q      &kp W      &kp F       &kp P       &kp B     &kp J  &kp L       &kp U       &kp Y      &kp APOS
+      &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G     &kp M  &mt LSHFT N &mt LCTRL E &mt LALT I &mt LGUI O
+      &kp Z      &kp X      &kp C       &kp D       &kp V     &kp K  &kp H       &kp COMMA   &kp PERIOD &kp SLASH
+                                  &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
+      >;
+    };
 
 // 1 SYMS LAYER
 // ------------------------------------     ----------------------------------- --
@@ -86,15 +86,15 @@
 //                      ---------------     -----------------
 //
 
-        sym_layer {
-            label = "syms";
-            bindings = <
-            &none     &none     &none      &none      &none          &kp LPAR   &kp RPAR   &kp EXCL   &kp SQT    &kp AMPS
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ESC        &kp LBKT   &kp RBKT   &kp QMARK  &kp SEMI   &kp PIPE
-            &none     &kp RALT  &none      &kp DEL    &none          &kp LT     &kp GT     &kp AT     &kp HASH   &kp CARET
-                                           &none      &none          &kp GRAVE  &kp PRCNT
-            >;
-        };
+    sym_layer {
+      label = "syms";
+      bindings = <
+      &none    &none    &none     &none     &none          &kp LPAR &kp RPAR &kp EXCL  &kp SQT   &kp AMPS
+      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &kp ESC        &kp LBKT &kp RBKT &kp QMARK &kp SEMI  &kp PIPE
+      &none    &kp RALT &none     &kp DEL   &none          &kp LT   &kp GT   &kp AT    &kp HASH  &kp CARET
+                                  &none     &none          &kp GRAVE &kp PRCNT
+      >;
+    };
 
 
 // 2 NUMSLAYER
@@ -111,15 +111,15 @@
 //                      ----------------     ----------------
 //
 
-        num_layer {
-            label = "nums";
-            bindings = <
-            &none     &none     &none      &kp DLLR    &kp PRCNT         &kp ASTRK   &kp N7    &kp N8    &kp N9    &kp MINUS
-            &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp ESC           &kp FSLH   &kp N4    &kp N5    &kp N6    &kp PLUS
-            &none     &kp RALT  &none      &kp DEL     &none             &kp BSLH   &kp N1    &kp N2    &kp N3    &kp EQUAL
-                                           &none       &none             &kp SPACE  &kp N0
-            >;
-        };
+    num_layer {
+      label = "nums";
+      bindings = <
+      &none    &none    &none     &kp DLLR  &kp PRCNT     &kp ASTRK &kp N7  &kp N8  &kp N9  &kp MINUS
+      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &kp ESC       &kp FSLH  &kp N4  &kp N5  &kp N6  &kp PLUS
+      &none    &kp RALT &none     &kp DEL   &none         &kp BSLH  &kp N1  &kp N2  &kp N3  &kp EQUAL
+                                  &none     &none         &kp SPACE &kp N0
+      >;
+    };
 
 
 // 3 NAV LAYER
@@ -136,15 +136,15 @@
 //                    ----------------     -------------
 //
 
-        nav_layer {
-            label = "navi";
-            bindings = <
-            &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp INS          &none      &none          &none      &none     &none
-            &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp CAPS         &kp K_APP  &kp LSHFT      &kp LCTRL  &kp LALT  &kp LGUI
-            &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)        &none      &kp LS(LG(S))  &none      &kp RALT  &none
-                                             &kp ENTER  &kp BSPC         &none      &none
-            >;
-        };
+    nav_layer {
+      label = "navi";
+      bindings = <
+      &kp PG_UP &kp HOME  &kp UP    &kp END   &kp INS     &none     &none         &none     &none     &none
+      &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT &kp CAPS    &kp K_APP &kp LSHFT     &kp LCTRL &kp LALT  &kp LGUI
+      &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y)   &none     &kp LS(LG(S)) &none     &kp RALT  &none
+                                    &kp ENTER &kp BSPC    &none      &none
+      >;
+    };
 
 
 // 4 FUNC LAYER
@@ -161,15 +161,15 @@
 //                 -----------------     ----------------
 //
 
-        func_layer {
-            label = "func";
-            bindings = <
-            &kp F12    &kp F7    &kp F8    &kp F9     &kp PSCRN              &none      &none       &none      &none     &none
-            &kp F11    &kp F4    &kp F5    &kp F6     &kp SLCK               &kp K_APP  &kp LSHFT   &kp LCTRL  &kp LALT  &kp LGUI
-            &kp F10    &kp F1    &kp F2    &kp F3     &kp PAUSE_BREAK        &none      &kp K_MUTE  &none      &kp RALT  &none
-                                           &kp ENTER  &kp BSPC               &mo NAV  &none
-            >;
-        };
+    func_layer {
+      label = "func";
+      bindings = <
+      &kp F12  &kp F7  &kp F8  &kp F9   &kp PSCRN            &none     &none      &none     &none    &none
+      &kp F11  &kp F4  &kp F5  &kp F6   &kp SLCK             &kp K_APP &kp LSHFT  &kp LCTRL &kp LALT &kp LGUI
+      &kp F10  &kp F1  &kp F2  &kp F3   &kp PAUSE_BREAK      &none     &kp K_MUTE &none     &kp RALT &none
+                               &kp ENTER &kp BSPC            &mo NAV   &none
+      >;
+    };
 
 
 // 5 UTIL LAYER
@@ -186,14 +186,14 @@
 //                        ---------------     -------------
 //
 
-        util_layer {
-            label = "utils";
-            bindings = <
-            &bt BT_CLR  &none       &none    &none       &none        &none    &none    &bootloader  &none    &none
-            &none       &bt BT_PRV  &none    &bt BT_NXT  &none        &none    &none    &none        &none    &none
-            &none       &none       &none    &none       &none        &none    &none    &none        &none    &none
-                                             &none       &none        &none    &none
-            >;
-        };
+    util_layer {
+      label = "utils";
+      bindings = <
+      &bt BT_CLR &none      &none   &none      &none        &none   &none   &bootloader &none   &none
+      &none      &bt BT_PRV &none   &bt BT_NXT &none        &none   &none   &none       &none   &none
+      &none      &none      &none   &none      &none        &none   &none   &none       &none   &none
+                                    &none      &none        &none   &none
+      >;
     };
+  };
 };
