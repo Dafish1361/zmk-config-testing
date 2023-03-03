@@ -147,8 +147,8 @@
     nav_layer {
       label = "navi";
       bindings = <
-      &none    &kp HOME &kp UP   &kp PG_UP &kp INS     &kp LC(Z)     &kp LC(X)    &kp LC(C) &kp LC(V)         &none
-      &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp DEL     &kp K_KUTE    &kp K_VOL_DN &kp K_VOL_UP &none          &none
+      &none    &kp HOME &kp UP   &kp PG_UP &kp INS     &kp LC(Z)     &kp LC(X)    &kp LC(C)    &kp LC(V)      &none
+      &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp DEL     &kp K_UTE    &kp K_VOL_DN &kp K_VOL_UP &none          &none
       &kp LGUI &kp END  &none    &kp PG_DN &kp K_APP   &kp C_BRI_MIN &kp C_BRI_DN &kp C_BRI_UP &kp C_BRI_MAX  &none
                                  &trans    &trans      &none      &trans
       >;
