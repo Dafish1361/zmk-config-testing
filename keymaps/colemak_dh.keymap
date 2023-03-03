@@ -104,7 +104,7 @@
 // 2 NUMSLAYER
 // ------------------------------------     -----------------------------------------
 // |      | ESC  |      | DEL  |      |     |       | AMPS  | ASTRK | LPAR  | RPAR  |
-// |     |       |      |      |      |     | TRANS |  N7   |   N8  |  N9   |   N0  |
+// |      |      |      |      |      |     | TRANS |  N7   |   N8  |  N9   |   N0  |
 // |----------------------------------|     |---------------------------------------|
 // | LGUI | LALT | LCTL | LSHT |      |     |       | DLLR  | PRCNT | CARET | UNDER |
 // |      |      |      |      |      |     | TRANS |  N4   |   N5  |   N6  | MINUS |
@@ -120,10 +120,10 @@
     num_layer {
       label = "nums";
       bindings = <
-      &none    &none    &none     &kp DLLR  &kp PRCNT     &kp ASTRK &kp N7  &kp N8  &kp N9  &kp MINUS
-      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &kp ESC       &kp FSLH  &kp N4  &kp N5  &kp N6  &kp PLUS
-      &none    &kp RALT &none     &kp DEL   &none         &kp BSLH  &kp N1  &kp N2  &kp N3  &kp EQUAL
-                                  &none     &none         &kp SPACE &kp N0
+      &none    &kp ESC  &none     &kp DEL   &none     &kp trans &kp N7  &kp N8  &kp N9  &kp N0
+      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none     &kp trans &kp N4  &kp N5  &kp N6  &kp MINUS
+      &none    &none    &none     &none     &none     &kp trans &kp N1  &kp N2  &kp N3  &kp EQUAL
+                                  &trans    &none     &kp trans &trans
       >;
     };
 
