@@ -67,11 +67,11 @@
     base_layer {
       label = "base";
       bindings = <
-      &kp Q     &kp W      &kp F     &kp P         &kp B  &kp J  &kp L     &kp U      &kp Y      &kp SQT
-      &mt LG(A) &mt LA(R)  &mt LC(S) &mt LS(T)     &kp G  &kp M  &mt LS(N) &mt LC(E)  &mt LA(I)  &mt LG(O)
-      &kp Z     &kp X      &kp C     &kp D         &kp V  &kp K  &kp H     &kp COMMA  &kp PERIOD &kp SLASH
-                   &lt SYM BSPC  &lt NUM SPACE     &lt NAV ENTER  &lt FUNC TAB
-      >;
+        &kp Q     &kp W      &kp F     &kp P     &kp B     &kp J  &kp L     &kp U      &kp Y      &kp SQT
+        &mt LG(A) &mt LA(R)  &mt LC(S) &mt LS(T) &kp G     &kp M  &mt LS(N) &mt LC(E)  &mt LA(I)  &mt LG(O)
+        &kp Z     &kp X      &kp C     &kp D     &kp V     &kp K  &kp H     &kp COMMA  &kp PERIOD &kp SLASH
+                            &lt SYM BSPC &lt NUM SPACE     &lt NAV ENTER  &lt FUNC TAB
+        >;
     };
 
 // 1 SYMS LAYER
