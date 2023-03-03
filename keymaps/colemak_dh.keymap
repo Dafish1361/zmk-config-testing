@@ -93,7 +93,7 @@
     sym_layer {
       label = "syms";
       bindings = <
-      &none    &kp ESC  &none     &kp DEL   &none      &kp GRAVE &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
+      &none    &kp ESC  &none     &DEL      &none      &kp GRAVE &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
       &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none      &kp LBKT  &kp DLLR &kp PRCNT &kp CARET &kp BLSH
       &none    &none    &none     &none     &none      &kp RBKT  &kp EXCL &kp AT    &kp HASH  &kp SLASH
                                   &none     &trans     &trans    &trans
