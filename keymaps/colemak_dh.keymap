@@ -67,17 +67,10 @@
     base_layer {
       label = "base";
       bindings = <
-        &kp Q      &kp W      &kp F       &kp P       &kp B   &kp J &kp L       &kp U       &kp Y      &kp SQT
-        &mt LG(A) &mt LALT R &mt LCTRL S &mt LSHFT T &kp G   &kp M &mt LSHFT N &mt LCTRL E &mt LALT I &mt LGUI O
-        &kp Z      &kp X      &kp C       &kp D       &kp V   &kp K &kp H       &kp COMMA   &kp PERIOD &kp SLASH
-                                    &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
-
-
-
-//        &kp Q     &kp W      &kp F     &kp P     &kp B     &kp J  &kp L     &kp U      &kp Y      &kp SQT
-//        &mt LG(A) &mt LA(R)  &mt LC(S) &mt LS(T) &kp G     &kp M  &mt LS(N) &mt LC(E)  &mt LA(I)  &mt LG(O)
-//        &kp Z     &kp X      &kp C     &kp D     &kp V     &kp K  &kp H     &kp COMMA  &kp PERIOD &kp SLASH
-//                            &lt SYM BSPC &lt NUM SPACE     &lt NAV ENTER  &lt FUNC TAB
+      &kp Q      &kp W      &kp F       &kp P       &kp B  &kp J &kp L       &kp U       &kp Y      &kp SQT
+      &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G  &kp M &mt LSHFT N &mt LCTRL E &mt LALT I &mt LGUI O
+      &kp Z      &kp X      &kp C       &kp D       &kp V  &kp K &kp H       &kp COMMA   &kp PERIOD &kp SLASH
+                              &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
         >;
     };
 
@@ -97,16 +90,16 @@
 //                      ----------------     -----------------
 //
 
-//    sym_layer {
-//      label = "syms";
-//      bindings = <
-//      &none    &kp ESC  &none     &kp DEL   &none      &kp GRAVE &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
-//      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none      &kp LBKT  &kp DLLR &kp PRCNT &kp CARET &kp BLSH
-//      &none    &none    &none     &none     &none      &kp RBKT  &kp EXCL &kp AT    &kp HASH  &kp SLASH
-//                                  &none     &trans     &trans    &trans
-//      >;
-//    };
-//
+    sym_layer {
+      label = "syms";
+      bindings = <
+      &none    &kp ESC  &none     &kp DEL   &none      &kp GRAVE &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
+      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none      &kp LBKT  &kp DLLR &kp PRCNT &kp CARET &kp BLSH
+      &none    &none    &none     &none     &none      &kp RBKT  &kp EXCL &kp AT    &kp HASH  &kp SLASH
+                                  &none     &trans     &trans    &trans
+      >;
+    };
+
 
 // 2 NUMSLAYER
 // ------------------------------------     -----------------------------------------
