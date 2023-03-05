@@ -6,10 +6,12 @@ manifest:
       url-base: https://github.com/ftc
     - name: StMotorSpark
       url-base: https://github.com/StMotorSpark
+    - name: mouse-dv
+      url-base: https://github.com/digver
   projects:
     - name: zmk
-      remote: StMotorSpark
-      revision: mouse-niceview-stms
+      remote: mouse-dv
+      revision: mouse-ftc-aurora-sweep
       import: app/west.yml
   self:
     path: config
