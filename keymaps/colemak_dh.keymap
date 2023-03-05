@@ -181,7 +181,7 @@
     maus_layer {
       label = "maus";
       bindings = <
-      &none    &none      &none     &none     &none        &mmv                  &mwh SCROLL_VERT(15) &mmv MOVE_VERT(2500)
+      &none    &none      &none     &none     &none        &none                  &mwh SCROLL_VERT(15) &mmv MOVE_VERT(2500)
                                                            &mwh SCROLL_VERT(-15) &none
       &none    &none      &none     &none     &none        &mmh SCROLL_HOR(-15)  &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(-2500)
                                                            &mmv MOVE_HOR(2500)   &mmh SCROLL_HOR(15)
