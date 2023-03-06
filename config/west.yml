@@ -2,16 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: ftc
-      url-base: https://github.com/ftc
-    - name: StMotorSpark
-      url-base: https://github.com/StMotorSpark
     - name: mouse-dv
       url-base: https://github.com/digver
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
-      remote: mouse-dv
-      revision: mouse-ftc-aurora-sweep
+      remote: urob
+      revision: main
       import: app/west.yml
   self:
     path: config
