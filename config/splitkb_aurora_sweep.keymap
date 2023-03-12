@@ -5,6 +5,11 @@
 
 // Initially derived from https://github.com/guruc13/zmk_sweep_colemak_dh
 // Which is derived from https://github.com/manna-harbour/miryoku
+// Now lots of stuff from urob/zmk
+
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
+
 
 #define BASE 0
 #define SYM  1
@@ -14,29 +19,31 @@
 #define FUNC 5
 #define UTIL 6
 
-#include "mouse.dtsi" // mouse.h is included here
+#include "combos.dtsi" // must be sourced after layer-shortcuts
+#include "mouse.dtsi"  // mouse.h is included here
 
-// adjust mod-tap
-&mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <300>;
-};
 
-/ {
 
-//  combos {
-//    compatible = "zmk,combos";
-//    combo_esc {
-//      timeout-ms = <50>;
-//      key-positions = <1 2>;
-//      bindings = <&kp ESC>;
-//     };
-//    combo_bspc {
-//      timeout-ms = <50>;
-//      key-positions = <7 8>;
-//      bindings = <&kp BSPC>;
-//    };
-//  };
+ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    global-quick-tap-ms = <150>;        // requires PR #1387
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;            // requires PR #1423
+)
+
+ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    global-quick-tap-ms = <150>;        // requires PR #1387
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;            // requires PR #1423
+)
+
 
   conditional_layers {
     compatible = "zmk,conditional-layers";
