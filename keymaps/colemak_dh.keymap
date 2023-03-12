@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h> // This is included in mouse.dtsi
+//#include <dt-bindings/zmk/mouse.h> // This is included in mouse.dtsi
 
 // Initially derived from https://github.com/guruc13/zmk_sweep_colemak_dh
 // Which is derived from https://github.com/manna-harbour/miryoku
