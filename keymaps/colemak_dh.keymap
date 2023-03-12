@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/mouse.h> // This is included in mouse.dtsi
 
 // Initially derived from https://github.com/guruc13/zmk_sweep_colemak_dh
 // Which is derived from https://github.com/manna-harbour/miryoku
@@ -13,6 +13,8 @@
 #define MAUS 4
 #define FUNC 5
 #define UTIL 6
+
+#include "mouse.dtsi" // mouse.h is included here
 
 // adjust mod-tap
 &mt {
@@ -89,7 +91,7 @@
 // ├──────┼──────┼──────┼──────┼──────┤    ├───────┼───────┼───────┼───────┼───────┤
 // │      │      │      │      │      │    │ RBRC  │       │       │       │ COLON │
 // │      │      │      │      │      │    │ RBKT  │ EXCL  │  AT   │ HASH  │ SEMI  │
-// └──────┴──────┴─┬────┴──────┴──────┤    ├───────┴───────┼───────┴───────┴───────┘
+// └──────┴──────┴─┬────┴──────┴──────┤    ├───────┼───────┼───────┴───────┴───────┘
 //                 │ MAUS(4)[SYM,NUM] │    │               │
 //                 │   ***     (NUM)  │    │       │       │
 //                 │   ***  │  TRANS  │    │ TRANS │ TRANS │
@@ -180,15 +182,17 @@
 //                      └──────┴───────┘  └────────┴────────┘
 //
 
+// See mouse.dtsi for #defines
+
     maus_layer { // layer 4
       label = "maus";
       bindings = <
-      &none    &none      &none     &none     &none        &none                  &mwh SCROLL_VERT(15) &mmv MOVE_VERT(-2500)
-                                                           &mwh SCROLL_VERT(-15) &none
-      &none    &none      &none     &none     &none        &mwh SCROLL_HOR(-15)  &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500)
-                                                           &mmv MOVE_HOR(2500)   &mwh SCROLL_HOR(15)
-      &kp LGUI &mkp LCLK  &mkp MCLK &mkp RCLK &kp K_APP    &none    &none      &none     &none     &none
-                                    &trans    &trans       &mkp LCLK &mkp RCLK
+//    &none     &none   &none   &none   &none        &none   &mwh SCROLL_VERT(15) &mmv MOVE_VERT(-2500) &mwh SCROLL_VERT(-15) &none
+      &none     &none   &none   &none   &none        &none   U_WH_U  U_MS_U  U_WH_D  &none
+//    &none     &none   &none   &none   &none        &mwh SCROLL_HOR(-15)  &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500) &mmv MOVE_HOR(2500)   &mwh SCROLL_HOR(15)
+      &none     &none   &none   &none   &none        U_WH_L  U_MS_L  U_MS_D  U_MS_R UWH_R
+      &kp LGUI  U_BN_L  U_BN_M  U_BN_R  &kp K_APP    &none    &none      &none     &none     &none
+                                &trans  &trans       U_BTNL U_BN_R
       >;
     };
 
@@ -203,7 +207,7 @@
 // ├───────┼────┼────┼────┼─────┤  ├────┼────┼────┼────┼────┤
 // │ PAUSE │    │    │    │     │  │    │    │    │    │    │
 // │ BREAK │ F1 │ F2 │ F3 │ F12 │  │    │    │    │    │    │
-// └───────┴────┴────┴────┴─────┤  ├────┴────┴────┴────┴────┘
+// └───────┴────┴┬───┴──┬─┴─────┤  ├────┴────┴────┴────┼────┘
 //               │              │  │ UTIL(6)[NAV,FUNC] │
 //               │              │  │  NAV(3)    ****   │
 //               │ BSPC │ ENTER │  │  TRANS  │  ****   │
@@ -223,19 +227,19 @@
 
 // 6 UTIL LAYER
 // ┌──────┬──────┬────┬──────┬────┐   ┌────┬────┬────────┬─────┬────┐
-// │  BT  │      │    │      │    │   │    │    │  boot  │     │    |
-// │ _CLR │      │    │      │    │   │    │    │ loader │     │    |
+// │  BT  │      │    │      │    │   │    │    │  boot  │     │    │
+// │ _CLR │      │    │      │    │   │    │    │ loader │     │    │
 // ├──────┼──────┼────┼──────┼────┤   ├────┼────┼────────┼─────┼────┤
-// │      │  BT  │    │  BT  │        |    │    │        │     │    |
-// │      │ _PRV │    │ _NXT │    │   │    │    │        │     │    |
+// │      │  BT  │    │  BT  │    │   │    │    │        │     │    │
+// │      │ _PRV │    │ _NXT │    │   │    │    │        │     │    │
 // ├──────┼──────┼────┼──────┼────┤   ├────┼────┼────────┼─────┼────┤
-// │      │      │    │      │    │   │    │    │        │     │    |
-// │      │      │    │      │    │   │    │    │        │     │    |
-// └──────┴──────┴────┴──────┴────┤   ├────┴────┴────────┴─────┴────┘
-//                    |           │   │ UTIL(6)[NAV,FUNC] |
-//                    |           │   │  ****      ****   |
-//                    |      |    │   │  ****  |   ****   |
-//                    └──────┴────┘   └────────┴──────────┘
+// │      │      │    │      │    │   │    │    │        │     │    │
+// │      │      │    │      │    │   │    │    │        │     │    │
+// └──────┴──────┴────┼──────┼────┤   ├────┴────┴────────┴┬────┴────┘
+//                    │           │   │ UTIL(6)[NAV,FUNC] │
+//                    │      │    │   │  ****      ****   │
+//                    │      │    │   │  ****   │   ****  │
+//                    └──────┴────┘   └─────────┴─────────┘
 //
 
     util_layer { // layer 6
