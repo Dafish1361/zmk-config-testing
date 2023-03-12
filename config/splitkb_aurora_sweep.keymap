@@ -1,1 +1,263 @@
-../keymaps/colemak_dh.keymap
+// Typically the config folder will include a keymap file
+// named as <shield>.keymap. By making this simply an include
+// it allows several keymaps (and configs to be played with.
+
+#include "../keymaps/colemak_dh.keymap" // mouse.h is included here
+
+//#include <behaviors.dtsi>
+//#include <dt-bindings/zmk/keys.h>
+//#include <dt-bindings/zmk/bt.h>
+////#include <dt-bindings/zmk/mouse.h> // This is included in mouse.dtsi
+//
+//// Initially derived from https://github.com/guruc13/zmk_sweep_colemak_dh
+//// Which is derived from https://github.com/manna-harbour/miryoku
+//
+//#define BASE 0
+//#define SYM  1
+//#define NUM  2
+//#define NAV  3
+//#define MAUS 4
+//#define FUNC 5
+//#define UTIL 6
+//
+//#include "mouse.dtsi" // mouse.h is included here
+//
+//// adjust mod-tap
+//&mt {
+//    flavor = "tap-preferred";
+//    tapping_term_ms = <300>;
+//};
+//
+/// {
+//
+////  combos {
+////    compatible = "zmk,combos";
+////    combo_esc {
+////      timeout-ms = <50>;
+////      key-positions = <1 2>;
+////      bindings = <&kp ESC>;
+////     };
+////    combo_bspc {
+////      timeout-ms = <50>;
+////      key-positions = <7 8>;
+////      bindings = <&kp BSPC>;
+////    };
+////  };
+//
+//  conditional_layers {
+//    compatible = "zmk,conditional-layers";
+//    cond_layer_util {
+//        if-layers = <NAV FUNC>;
+//        then-layer = <UTIL>;
+//    };
+//    cond_layer_maus {
+//        if-layers = <SYM NUM>;
+//        then-layer = <MAUS>;
+//    };
+//  };
+//
+//
+//  keymap {
+//    compatible = "zmk,keymap";
+//
+//// 0 BASE LAYER
+//// ┌──────┬──────┬──────┬──────┬──────┐     ┌──────┬──────┬───────┬────────┬───────┐
+//// │      │      │      │      │      │     │      │      │       │        │  DQT  │
+//// │   Q  │   W  │   F  │   P  │   B  │     │  J   │   L  │   U   │    Y   │  SQT  │
+//// ├──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼───────┼────────┼───────┤
+//// │ LGUI │ LALT │ LCTL │ LSHT │      │     │      │ LSHT │ LCTL  │  LALT  │ K_APP │
+//// │   A  │   R  │   S  │   T  │   G  │     │  M   │   N  │   E   │    I   │   O   │
+//// ├──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼───────┼────────┼───────┤
+//// │      │      │      │      │      │     │      │      │   LT  │   GT   │ QMARK │
+//// │   Z  │   X  │   C  │   D  │   V  │     │  K   │   H  │ COMMA │ PERIOD │ SLASH │
+//// └──────┴──────┴─┬────┴──────┴──────┤     ├──────┴──────┴─────┬─┴────────┴───────┘
+////                 │ MAUS(4)[SYM,NUM] │     │ UTIL(6)[NAV,FUNC] │
+////                 │ SYM(1)   NUM(2)  │     │ NAV(3)   FUNC(5)  │
+////                 │  BSPC  │ SPACE   │     │ ENTER  │   TAB    │
+////                 └────────┴─────────┘     └────────┴──────────┘
+////
+//
+//    base_layer { // layer 0
+//      label = "base";
+//      bindings = <
+//      &kp Q      &kp W      &kp F       &kp P       &kp B        &kp J &kp L       &kp U       &kp Y      &kp SQT
+//      &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G        &kp M &mt LSHFT N &mt LCTRL E &mt LALT I &mt LGUI O
+//      &kp Z      &kp X      &kp C       &kp D       &kp V        &kp K &kp H       &kp COMMA   &kp PERIOD &kp SLASH
+//                              &lt SYM BSPC  &lt NUM SPACE        &lt NAV ENTER  &lt FUNC TAB
+//        >;
+//    };
+//
+//// 1 SYMS LAYER
+//// ┌──────┬──────┬──────┬──────┬──────┐    ┌───────┬───────┬───────┬───────┬───────┐
+//// │      │ ESC  │      │ DEL  │      │    │ TILDE │       │       │       │       │
+//// │      │      │      │      │      │    │ GRAVE │ AMPS  │ ASTRK │ LPAR  │ RPAR  │
+//// ├──────┼──────┼──────┼──────┼──────┤    ├───────┼───────┼───────┼───────┼───────┤
+//// │ LGUI │ LALT │ LCTL │ LSHT │      │    │ LBRC  │       │       │       │ PIPE  │
+//// │      │      │      │      │      │    │ LBKT  │ DLLR  │ PRCNT │ CARET │ BSLH  │
+//// ├──────┼──────┼──────┼──────┼──────┤    ├───────┼───────┼───────┼───────┼───────┤
+//// │      │      │      │      │      │    │ RBRC  │       │       │       │ COLON │
+//// │      │      │      │      │      │    │ RBKT  │ EXCL  │  AT   │ HASH  │ SEMI  │
+//// └──────┴──────┴─┬────┴──────┴──────┤    ├───────┼───────┼───────┴───────┴───────┘
+////                 │ MAUS(4)[SYM,NUM] │    │               │
+////                 │   ***     (NUM)  │    │       │       │
+////                 │   ***  │  TRANS  │    │ TRANS │ TRANS │
+////                 └────────┴─────────┘    └───────┴───────┘
+////
+//
+//    sym_layer { //layer 1
+//      label = "syms";
+//      bindings = <
+//      &none    &kp ESC  &none     &kp DEL   &none      &kp GRAVE &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
+//      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none      &kp LBKT  &kp DLLR &kp PRCNT &kp CARET &kp BSLH
+//      &none    &none    &none     &none     &none      &kp RBKT  &kp EXCL &kp AT    &kp HASH  &kp SEMI
+//                                  &none     &trans     &trans    &trans
+//      >;
+//    };
+//
+//
+//// 2 NUMS LAYER
+//// ┌──────┬──────┬──────┬──────┬──────┐     ┌───────┬───────┬───────┬───────┬───────┐
+//// │      │ ESC  │      │ DEL  │      │     │       │ AMPS  │ ASTRK │ LPAR  │ RPAR  │
+//// │      │      │      │      │      │     │ TRANS │  N7   │   N8  │  N9   │   N0  │
+//// ├──────┼──────┼──────┼──────┼──────┤     ├───────┼───────┼───────┼───────┼───────┤
+//// │ LGUI │ LALT │ LCTL │ LSHT │      │     │       │ DLLR  │ PRCNT │ CARET │ UNDER │
+//// │      │      │      │      │      │     │ TRANS │  N4   │   N5  │   N6  │ MINUS │
+//// ├──────┼──────┼──────┼──────┼──────┤     ├───────┼───────┼───────┼───────┼───────┤
+//// │      │      │      │      │      │     │       │ EXCL  │   AT  │  HASH │ PLUS  │
+//// │      │      │      │      │      │     │ TRANS │  N1   │   N2  │   N3  │ EQUAL │
+//// └──────┴──────┴─┬────┴──────┴──────┤     ├───────┼───────┼───────┴───────┴───────┘
+////                 │ MAUS(4)[SYM,NUM] │     │               │
+////                 │ (SYM)      ****  │     │       │       │
+////                 │ TRANS  │   ****  │     │ TRANS │ TRANS │
+////                 └────────┴─────────┘     └───────┴───────┘
+////
+//
+//    num_layer { //layer 2
+//      label = "nums";
+//      bindings = <
+//      &none    &kp ESC  &none     &kp DEL   &none     &trans &kp N7  &kp N8  &kp N9  &kp N0
+//      &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none     &trans &kp N4  &kp N5  &kp N6  &kp MINUS
+//      &none    &none    &none     &none     &none     &trans &kp N1  &kp N2  &kp N3  &kp EQUAL
+//                                  &trans    &none     &trans &trans
+//      >;
+//    };
+//
+//
+//// 3 NAV LAYER
+//// ┌──────┬──────┬──────┬───────┬───────┐   ┌────────┬───────┬───────┬───────┬────┐
+//// │      │      │      │       │       │   │ UNDO   │  CUT  │ COPY  │ PASTE │    │
+//// │      │ HOME │  UP  │ PG_UP │  INS  │   │ LC(Z)  │ LC(X) │ LC(C) │ LC(V) │    │
+//// ├──────┼──────┼──────┼───────┼───────┤   ├────────┼───────┼───────┼───────┼────┤
+//// │      │      │      │       │       │   │        │ K_VOL │ K_VOL │       │    │
+//// │ CAPS │ LEFT │ DOWN │ RIGHT │  DEL  │   │ K_MUTE │  _DN  │  _UP  │       │    │
+//// ├──────┼──────┼──────┼───────┼───────┤   ├────────┼───────┼───────┼───────┼────┤
+//// │      │      │      │       │       │   │ C_BRI  │ C_BRI │ C_BRI │ C_BRI │    │
+//// │ LGUI │ END  │      │ PG_DN │ K_APP │   │  _MIN  │  _DN  │  _UP  │  _MAX │    │
+//// └──────┴──────┴──────┼───────┼───────┤   ├────────┴───────┴──┬────┴───────┴────┘
+////                      │               │   │ UTIL(6)[NAV,FUNC] │
+////                      │ BSPC  │ ENTER │   │   ****     (FUNC) │
+////                      │ BSPC  │ ENTER │   │   ****  │  TRANS  │
+////                      └───────┴───────┘   └─────────┴─────────┘
+////
+//
+//    nav_layer { //layer 3
+//      label = "navi";
+//      bindings = <
+//      &none    &kp HOME &kp UP   &kp PG_UP &kp INS     &kp LC(Z)     &kp LC(X)    &kp LC(C)    &kp LC(V)      &none
+//      &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp DEL     &kp K_MUTE    &kp K_VOL_DN &kp K_VOL_UP &none          &none
+//      &kp LGUI &kp END  &none    &kp PG_DN &kp K_APP   &kp C_BRI_MIN &kp C_BRI_DN &kp C_BRI_UP &kp C_BRI_MAX  &none
+//                                 &trans    &trans      &none      &trans
+//      >;
+//    };
+//
+//// 4 MAUS LAYER
+//// ┌──────┬──────┬──────┬──────┬───────┐  ┌────────┬────────┬────────┬────────┬─────────┐
+//// │      │      │      │      │       │  │        │  (up)  │  (up)  │ (down) │         │
+//// │      │      │      │      │       │  │        │ SCROLL │  MOVE  │ SCROLL │         │
+//// │      │      │      │      │       │  │        │  VERT  │  VERT  │  VERT  │         │
+//// ├──────┼──────┼──────┼──────┼───────┤  ├────────┼────────┼────────┼────────┼─────────┤
+//// │      │      │      │      │       │  │ (left) │ (left) │ (down) │ (left) │ (right) │
+//// │      │      │      │      │       │  │ SCROLL │  MOVE  │  MOVE  │  MOVE  │ SCROLL  │
+//// │ LGUI │ LCLK │ MCLK │ RCLK │ K_APP │  │  HOR   │  HOR   │  VERT  │   HOR  │   HOR   │
+//// ├──────┼───── ┼──────┼──────┼───────┤  ├────────┼────────┼────────┼────────┼─────────┤
+//// │      │      │      │      │       │  │        │        │        │        │         │
+//// │      │      │      │      │       │  │        │        │        │        │         │
+//// └──────┴──────┴──────┼──────┼───────┤  ├────────┼────────┼────────┴────────┴─────────┘                                        │
+////                      │ **** │ ****  │  │        │        │
+////                      │ **** │ ****  │  │  LCLK  │ RCLK   │
+////                      └──────┴───────┘  └────────┴────────┘
+////
+//
+//// See mouse.dtsi for #defines
+//
+//    maus_layer { // layer 4
+//      label = "maus";
+//      bindings = <
+//////    &none     &none   &none   &none   &none        &none   &mwh SCROLL_VERT(15) &mmv MOVE_VERT(-2500) &mwh SCROLL_VERT(-15) &none
+//////    &none     &none   &none   &none   &none        &mwh SCROLL_HOR(-15)  &mmv MOVE_HOR(-2500) &mmv MOVE_VERT(2500) &mmv MOVE_HOR(2500)   &mwh SCROLL_HOR(15)
+//
+//      &none     &none   &none   &none   &none        &none   U_WH_U  U_MS_U  U_WH_D  &none
+//      &none     &none   &none   &none   &none        U_WH_L  U_MS_L  U_MS_D  U_MS_R U_WH_R
+//      &kp LGUI  U_BN_L  U_BN_M  U_BN_R  &kp K_APP    &none    &none      &none     &none     &none
+//                                &trans  &trans       U_BN_L U_BN_R
+//      >;
+//    };
+//
+//
+//// 5 FUNC LAYER
+//// ┌───────┬────┬────┬────┬─────┐  ┌────┬────┬────┬────┬────┐
+//// │       │    │    │    │     │  │    │    │    │    │    │
+//// │ PSCRN │ F7 │ F8 │ F9 │ F10 │  │    │    │    │    │    │
+//// ├───────┼────┼────┼────┼─────┤  ├────┼────┼────┼────┼────┤
+//// │       │    │    │    │     │  │    │    │    │    │    │
+//// │ SLCK  │ F4 │ F5 │ F6 │ F11 │  │    │    │    │    │    │
+//// ├───────┼────┼────┼────┼─────┤  ├────┼────┼────┼────┼────┤
+//// │ PAUSE │    │    │    │     │  │    │    │    │    │    │
+//// │ BREAK │ F1 │ F2 │ F3 │ F12 │  │    │    │    │    │    │
+//// └───────┴────┴┬───┴──┬─┴─────┤  ├────┴────┴────┴────┼────┘
+////               │              │  │ UTIL(6)[NAV,FUNC] │
+////               │              │  │  NAV(3)    ****   │
+////               │ BSPC │ ENTER │  │  TRANS  │  ****   │
+////               └──────┴───────┘  └─────────┴─────────┘
+////
+//
+//    func_layer { // layer 5
+//      label = "func";
+//      bindings = <
+//      &kp PSCRN        &kp F7  &kp F8  &kp F9   &kp F12      &none     &none      &none     &none    &none
+//      &kp SLCK         &kp F4  &kp F5  &kp F6   &kp F11      &none     &none      &none     &none    &none
+//      &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3   &kp F10      &none     &none      &none     &none    &none
+//                                     &kp BSPC &kp ENTER      &trans   &none
+//      >;
+//    };
+//
+//
+//// 6 UTIL LAYER
+//// ┌──────┬──────┬────┬──────┬────┐   ┌────┬────┬────────┬─────┬────┐
+//// │  BT  │      │    │      │    │   │    │    │  boot  │     │    │
+//// │ _CLR │      │    │      │    │   │    │    │ loader │     │    │
+//// ├──────┼──────┼────┼──────┼────┤   ├────┼────┼────────┼─────┼────┤
+//// │      │  BT  │    │  BT  │    │   │    │    │        │     │    │
+//// │      │ _PRV │    │ _NXT │    │   │    │    │        │     │    │
+//// ├──────┼──────┼────┼──────┼────┤   ├────┼────┼────────┼─────┼────┤
+//// │      │      │    │      │    │   │    │    │        │     │    │
+//// │      │      │    │      │    │   │    │    │        │     │    │
+//// └──────┴──────┴────┼──────┼────┤   ├────┴────┴────────┴┬────┴────┘
+////                    │           │   │ UTIL(6)[NAV,FUNC] │
+////                    │      │    │   │  ****      ****   │
+////                    │      │    │   │  ****   │   ****  │
+////                    └──────┴────┘   └─────────┴─────────┘
+////
+//
+//    util_layer { // layer 6
+//      label = "utils";
+//      bindings = <
+//      &bt BT_CLR &none      &none   &none      &none        &none   &none   &bootloader &none   &none
+//      &none      &bt BT_PRV &none   &bt BT_NXT &none        &none   &none   &none       &none   &none
+//      &none      &none      &none   &none      &none        &none   &none   &none       &none   &none
+//                                    &none      &none        &none   &none
+//      >;
+//    };
+//  };
+//};
+//
