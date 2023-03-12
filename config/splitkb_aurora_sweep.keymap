@@ -57,7 +57,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     };
   };
 
-╭─
+
   keymap {
     compatible = "zmk,keymap";
 
