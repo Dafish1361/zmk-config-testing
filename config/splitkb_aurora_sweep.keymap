@@ -7,7 +7,7 @@
 // Now lots of stuff from urob/zmk
 
 #include "../zmk-nodefree-config/helper.h"
-// #include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
 
 #define BASE 0
 #define SYM  1
