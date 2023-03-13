@@ -19,7 +19,7 @@
 #define FUNC 5
 #define UTIL 6
 
-#include "combos.dtsi" // must be sourced after layer-shortcuts
+//#include "combos.dtsi" // must be sourced after layer-shortcuts
 #include "mouse.dtsi"  // mouse.h is included here
 
 #define QUICK_TAP_MS 175
