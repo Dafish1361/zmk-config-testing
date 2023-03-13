@@ -35,7 +35,7 @@ ZMK_BEHAVIOR(hrl, hold_tap,
     quick-tap-ms = <QUICK_TAP_MS>;
     global-quick-tap-ms = <150>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-key-positions = <10 15>;
 )
 
 // ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
