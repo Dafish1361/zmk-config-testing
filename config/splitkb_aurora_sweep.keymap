@@ -6,6 +6,8 @@
 // Which is derived from https://github.com/manna-harbour/miryoku
 // Now lots of stuff from urob/zmk
 
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
 
 #define BASE 0
 #define SYM  1
@@ -16,7 +18,9 @@
 #define UTIL 6
 
 
-#include "mouse.dtsi"  // mouse.h is included here
+#include "combos.dtsi"  // must be sourced after layer-shortcuts
+#include "mouse.dtsi"
+
 
 / {
 
