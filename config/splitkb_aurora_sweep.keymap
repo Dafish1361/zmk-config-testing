@@ -49,7 +49,7 @@
 //     hold-trigger-on-release;            // requires PR #1423
 //)
 
-
+/ {
   conditional_layers {
     compatible = "zmk,conditional-layers";
     cond_layer_util {
