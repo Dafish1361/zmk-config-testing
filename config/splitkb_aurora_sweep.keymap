@@ -29,10 +29,10 @@
 
 #define QUICK_TAP_MS 175
 
-ZMK_BEHAVIOR(hrm, hold_tap,
+ZMK_BEHAVIOR(hrl, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <125>;
+    quick-tap-ms = QUICK_TAP_MS;
     global-quick-tap;
     bindings = <&kp>, <&kp>;
 )
