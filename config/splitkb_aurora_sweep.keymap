@@ -2,8 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-//mouse.h is included in mouse.dtsi
-
 // Initially derived from https://github.com/guruc13/zmk_sweep_colemak_dh
 // Which is derived from https://github.com/manna-harbour/miryoku
 // Now lots of stuff from urob/zmk
@@ -17,30 +15,10 @@
 #define FUNC 5
 #define UTIL 6
 
-// adjust mod-tap
-&mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <300>;
-};
 
 #include "mouse.dtsi"  // mouse.h is included here
 
 / {
-
-//  combos {
-//    compatible = "zmk,combos";
-//    combo_esc {
-//      timeout-ms = <50>;
-//      key-positions = <1 2>;
-//      bindings = <&kp ESC>;
-//     };
-//    combo_bspc {
-//      timeout-ms = <50>;
-//      key-positions = <7 8>;
-//      bindings = <&kp BSPC>;
-//    };
-//  };
-
 
   conditional_layers {
     compatible = "zmk,conditional-layers";
