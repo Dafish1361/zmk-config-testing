@@ -7,7 +7,7 @@
 // Now lots of stuff from urob/zmk
 
 #include "../zmk-nodefree-config/helper.h"
-#include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
+// #include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
 
 #define BASE 0
 #define SYM  1
@@ -23,31 +23,39 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
 // must be sourced after layer-shortcuts
-// #include "combos.dtsi"  // references layer defs we are not using
+#include "combos.dtsi"  // references layer defs we are not using
 
 #include "mouse.dtsi"
 
 #define QUICK_TAP_MS 175
 
-ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
+ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    // global-quick-tap-ms = <150>;        // requires PR #1387
+    quick-tap-ms = <125>;
+    global-quick-tap;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    // hold-trigger-on-release;            // requires PR #1423
 )
 
-ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    // global-quick-tap-ms = <150>;        // requires PR #1387
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    // hold-trigger-on-release;            // requires PR #1423
-)
+// ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
+//     flavor = "balanced";
+//     tapping-term-ms = <280>;
+//     quick-tap-ms = <QUICK_TAP_MS>;
+//     global-quick-tap-ms = <150>;        // requires PR #1387
+//     bindings = <&kp>, <&kp>;
+//     hold-trigger-key-positions = <KEYS_R THUMBS>;
+//     hold-trigger-on-release;            // requires PR #1423
+// )
+//
+// ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
+//     flavor = "balanced";
+//     tapping-term-ms = <280>;
+//     quick-tap-ms = <QUICK_TAP_MS>;
+//     global-quick-tap-ms = <150>;        // requires PR #1387
+//     bindings = <&kp>, <&kp>;
+//     hold-trigger-key-positions = <KEYS_L THUMBS>;
+//     hold-trigger-on-release;            // requires PR #1423
+// )
 
 
 
