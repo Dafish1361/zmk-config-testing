@@ -29,16 +29,13 @@
 
 #define QUICK_TAP_MS 175
 
-#define K10 10
-#define K15 15
-
 ZMK_BEHAVIOR(hrl, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>;
     global-quick-tap-ms = <150>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <LT0 LT1>;
+    hold-trigger-key-positions = <KEYS_R>;
 )
 
 // ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
