@@ -23,8 +23,7 @@
 #define THUMBS LH1 LH0 RH0 RH1                                      // thumb keys
 
 // must be sourced after layer-shortcuts
-//#include "combos.dtsi"  // references layer defs we are not using
-
+#include "combos.dtsi"  // references layer defs we are not using
 #include "mouse.dtsi"
 
 #define QUICK_TAP_MS 175
@@ -80,7 +79,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 // ├───────┼─GRAVE─┼─BSLH─┼─EQUAL─│ TILDE─┤     ├─UNDER─┼─MINUS─┼─SLASH─┼─PIPE─┼──────┤
 // │       │       │      │       │       │     │       │       │       │      │      │
 // │       │    COPY    PASTE     │       │  B  │       │     LBKT     RBKT    │      │
-// ╰───────┴───────┴────╮─┴───────┴───────┤     ├───────┴───────┴────╭──┴──────┴──────╯
+// ╰───────┴───────┴────╮─┴───────┴───────┤     ├───────┴───────┴───╭───┴──────┴──────╯
 //                      │     MAUS(4)     │     │     UTIL(6)       │
 //                      │ SYM(1) ┬ NUM(2) │  H  │ NAV(3) ┬  FUNC(5) │
 //                      │  BSPC  │ SPACE  │     │ ENTER  │   TAB    │
