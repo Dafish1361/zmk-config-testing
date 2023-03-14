@@ -69,19 +69,20 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     compatible = "zmk,keymap";
 
 // 0 BASE LAYER SYM combos
+//     4       3       2      1       0             0       1       2      3      4
 // ╭───────┬───────┬──────┬───────┬───────╮     ╭───────┬───────┬───────┬──────┬──────╮
 // │       │     ESC     TAB      │       │     │       │     LBRC     RBRC    │      │
-// │       │       │      │       │       │     │       │       │       │      │      │
+// │       │       │      │       │       │  T  │       │       │       │      │      │
 // ├───────┼──AT───┼─HASH─┼─DLLR──┼─PRCNT─┤     ├─CARET ┼─PLUS──┼─ASTRK─┼─AMPS─┼──────┤
 // │       │       │      │       │       │     │       │       │       │      │      │
-// │       │    REPEAT   ENTER    │       │     │       │     LPAR     RPAR    │      │
+// │       │    REPEAT   ENTER    │       │  M  │       │     LPAR     RPAR    │      │
 // │       │       │      │       │       │     │       │       │       │      │      │
 // ├───────┼─GRAVE─┼─BSLH─┼─EQUAL─│ TILDE─┤     ├─UNDER─┼─MINUS─┼─SLASH─┼─PIPE─┼──────┤
 // │       │       │      │       │       │     │       │       │       │      │      │
-// │       │    COPY    PASTE     │       │     │       │     LBKT     RBKT    │      │
+// │       │    COPY    PASTE     │       │  B  │       │     LBKT     RBKT    │      │
 // ╰───────┴───────┴────╮─┴───────┴───────┤     ├───────┴───────┴────╭──┴──────┴──────╯
 //                      │     MAUS(4)     │     │     UTIL(6)       │
-//                      │ SYM(1) ┬ NUM(2) │     │ NAV(3) ┬  FUNC(5) │
+//                      │ SYM(1) ┬ NUM(2) │  H  │ NAV(3) ┬  FUNC(5) │
 //                      │  BSPC  │ SPACE  │     │ ENTER  │   TAB    │
 //                      ╰────────┴────────╯     ╰────────┴──────────╯
 //
