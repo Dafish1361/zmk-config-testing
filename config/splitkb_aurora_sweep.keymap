@@ -32,7 +32,7 @@
 #define NAV_R     &mt END      RIGHT   // tap: right | long-tap: end       of line
 #define NAV_U     &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
 #define NAV_D     &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
-#define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+#define NAV_BSC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
 
@@ -202,19 +202,19 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
 // │      │      │      │       │       │   │ C_BRI  │ C_BRI  │ C_BRI │ C_BRI │    │
 // │ LGUI │ END  │      │ PG_DN │ K_APP │   │  _MIN  │  _DN   │  _UP  │  _MAX │    │
 // ╰──────┴──────┴──────╮───────┼───────┤   ├────────┴────────╭───────┴───────┴────╯
-//                      │               │   │     UTIL(6)     │
-//                      │ BSPC  ┬ ENTER │   │  ****  ┬ (FUNC) │
-//                      │ BSPC  │ ENTER │   │  ****  │ TRANS  │
+//                      │               │   │                 │
+//                      │       ┬       │   │        ┬        │
+//                      │ TRANS │ TRANS │   │ TRANS  │ TRANS  │
 //                      ╰───────┴───────╯   ╰────────┴────────╯
 //
 
     nav_layer { //layer 3
       label = "navi";
       bindings = <
-      &kp LC(Z)     &kp LC(X)    &kp LC(C)    &kp LC(V)      &none       &none    &kp HOME &kp UP   &kp PG_UP &kp INS
-      &kp K_MUTE    &kp K_VOL_DN &kp K_VOL_UP &none          &none       &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp DEL
-      &kp C_BRI_MIN &kp C_BRI_DN &kp C_BRI_UP &kp C_BRI_MAX  &none       &kp LGUI &kp END  &none    &kp PG_DN &kp K_APP
-                                              &trans         &trans      &trans    &trans
+      &none         &none        &none        &none          &none     &kp PG_UP  NAV_BSC NAV_U  NAV_DEL &kp INS
+      &kp K_MUTE    &kp K_VOL_DN &kp K_VOL_UP &none          &none     &kp PG_DN  NAV_L   NAV_D  NAV_R   &none
+      &kp C_BRI_MIN &kp C_BRI_DN &kp C_BRI_UP &kp C_BRI_MAX  &none     &kp K_APP  &none   &none  &none   &none
+                                              &trans         &trans    &trans     &trans
       >;
     };
 
