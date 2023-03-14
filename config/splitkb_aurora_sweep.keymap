@@ -76,13 +76,13 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
   conditional_layers {
     compatible = "zmk,conditional-layers";
     cond_layer_util {
-        if-layers = <NAV FUNC>;
+        if-layers = <NUM FUNC>;
         then-layer = <UTIL>;
     };
-    cond_layer_maus {
-        if-layers = <SYM NUM>;
-        then-layer = <MAUS>;
-    };
+    // cond_layer_maus {
+    //     if-layers = <SYM NUM>;
+    //     then-layer = <MAUS>;
+    // };
   };
 
 
@@ -119,7 +119,7 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
 // │       │      │       │      │      │     │      │      │   LT  │   GT   │ EXCL  │
 // │   Z   │   X  │   C   │   D  │   V  │     │  K   │   H  │ COMMA │ PERIOD │ QMARK │
 // ╰───────┴──────┴──╮────┴──────┴──────┤     ├──────┴──────┴─────╭─┴────────┴───────╯
-//                   │                  │     │     UTIL(6)       │
+//                   │                  │     │      UTIL(6)      │
 //                   │ NAV(3) ┬ MAUS(4) │     │ NUM(2) ┬  FUNC(5) │
 //                   │  BSPC  │  SPACE  │     │ ENTER  │   TAB    │
 //                   ╰────────┴─────────╯     ╰────────┴──────────╯
