@@ -4,27 +4,33 @@
 
 // Initially derived from https://github.com/guruc13/zmk_sweep_colemak_dh
 // Which is derived from https://github.com/manna-harbour/miryoku
-// Now lots of stuff from urob/zmk
+// Now lots of stuff directly from urob's zmk work
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
 
 #define BASE 0
-#define SYM  1
-#define NUM  2
-#define NAV  3
-#define MAUS 4
-#define FUNC 5
-#define UTIL 6
+#define SYM  1    // Hold LH1
+#define NUM  2    // Hold LH0
+#define NAV  3    // Hold RH0
+#define MAUS 4    // Hold LH1 + LH0
+#define FUNC 5    // Hold RH1
+#define UTIL 6    // Hold RH0 + RH1
 
+// must be sourced after layer-shortcuts and after keypos_34keys.h
+#include "combos.dtsi"  // references layer defs we are not using
+#include "mouse.dtsi"
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <220>;
+    quick-tap-ms = <220>;              // repeat on tap-into-hold
+    hold-trigger-key-positions = <0>;  // tap on interrupt
+};
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH1 LH0 RH0 RH1                                      // thumb keys
-
-// must be sourced after layer-shortcuts
-#include "combos.dtsi"  // references layer defs we are not using
-#include "mouse.dtsi"
 
 #define QUICK_TAP_MS 175
 
@@ -38,6 +44,7 @@ ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
     hold-trigger-on-release;            // requires PR #1423
 )
 
+
 ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     flavor = "balanced";
     tapping-term-ms = <280>;
@@ -46,6 +53,13 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
+)
+
+
+// tap: qmark | shift + tap: excl
+ZMK_BEHAVIOR(qexcl, mod_morph,
+    bindings = <&kp QMARK>, <&kp EXCL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 
@@ -81,7 +95,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 // │       │    COPY    PASTE     │       │  B  │       │     LBKT     RBKT    │      │
 // ╰───────┴───────┴────╮─┴───────┴───────┤     ├───────┴───────┴───╭───┴──────┴──────╯
 //                      │     MAUS(4)     │     │     UTIL(6)       │
-//                      │ SYM(1) ┬ NUM(2) │  H  │ NAV(3) ┬  FUNC(5) │
+//           LEFT       │ SYM(1) ┬ NUM(2) │  H  │ NAV(3) ┬  FUNC(5) │     RIGHT
 //                      │  BSPC  │ SPACE  │     │ ENTER  │   TAB    │
 //                      ╰────────┴────────╯     ╰────────┴──────────╯
 //
@@ -94,8 +108,8 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 // │ LGUI  │ LALT │ LCT L │ LSHT │      │     │      │ LSHT │ LCTL  │  LALT  │ K_APP │
 // │   A   │   R  │   S   │   T  │   G  │     │  M   │   N  │   E   │    I   │   O   │
 // ├───────┼──────┼───────┼──────┼──────┤     ├──────┼──────┼───────┼────────┼───────┤
-// │       │      │       │      │      │     │      │      │   LT  │   GT   │ QMARK │
-// │   Z   │   X  │   C   │   D  │   V  │     │  K   │   H  │ COMMA │ PERIOD │ SLASH │
+// │       │      │       │      │      │     │      │      │   LT  │   GT   │ EXCL  │
+// │   Z   │   X  │   C   │   D  │   V  │     │  K   │   H  │ COMMA │ PERIOD │ QMARK │
 // ╰───────┴──────┴───╮───┴──────┴──────┤     ├──────┴──────┴─────╭─┴────────┴───────╯
 //                    │     MAUS(4)     │     │     UTIL(6)       │
 //                    │ SYM(1) ┬ NUM(2) │     │ NAV(3) ┬  FUNC(5) │
@@ -108,7 +122,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
       bindings = <
       &kp Q       &kp W       &kp F        &kp P        &kp B     &kp J &kp L       &kp U       &kp Y      &kp SQT
       &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G     &kp M  &hmr RSHFT N  &hmr LCTRL E &hmr LALT I &hmr LGUI O
-      &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &kp COMMA    &kp PERIOD  &kp SLASH
+      &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &kp COMMA    &kp PERIOD  &qexcl
                                   &lt SYM BSPC  &lt NUM SPACE     &lt NAV ENTER  &lt FUNC TAB
         >;
     };
