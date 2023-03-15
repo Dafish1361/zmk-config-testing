@@ -85,13 +85,13 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
 // tap: period | shift + tap: colon | ctrl + shift + tap: <
 ZMK_BEHAVIOR(period_inner_morph, mod_morph,
     bindings = <&kp COLON>, <&kp LESS_THAN>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
+    mods = <(MOD_LALT|MOD_RALT)>;
 )
 
 // tap: period | shift + tap: colon | ctrl + shift + tap: >
 ZMK_BEHAVIOR(period_inner_morph, mod_morph,
     bindings = <&kp COLON>, <&kp GREATER_THAN>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
+    mods = <(MOD_LALT|MOD_RALT)>;
 )
 
 
