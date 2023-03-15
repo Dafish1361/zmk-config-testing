@@ -76,11 +76,22 @@ ZMK_BEHAVIOR(csemi, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// tap: period | shift + tap: excl
+// tap: period | shift + tap: COLON
 ZMK_BEHAVIOR(pcolon, mod_morph,
     bindings = <&kp PERIOD>, <&kp COLON>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
+
+// tap: period | shift + tap: colon | ctrl + shift + tap: <
+ZMK_BEHAVIOR(period_inner_morph, mod_morph,
+    bindings = <&kp COLON>, <&kp LESS_THAN>;
+    mods = <(MOD_LCTL|MOD_RCTL)>
+
+// tap: period | shift + tap: colon | ctrl + shift + tap: >
+ZMK_BEHAVIOR(period_inner_morph, mod_morph,
+    bindings = <&kp COLON>, <&kp GREATER_THAN>;
+    mods = <(MOD_LCTL|MOD_RCTL)>
+
 
 // // tap: comma | control + shift + tap: less_than
 // ZMK_BEHAVIOR(pcolon, mod_morph,
