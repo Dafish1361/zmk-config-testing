@@ -97,10 +97,6 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
         if-layers = <NUM FUNC>;
         then-layer = <UTIL>;
     };
-    // cond_layer_maus {
-qrqq    //     if-layers = <SYM NUM>;
-    //     then-layer = <MAUS>;
-    // };
   };
 
 
