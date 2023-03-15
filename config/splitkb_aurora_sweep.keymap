@@ -70,6 +70,24 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
+// tap: comma | shift + tap: semi-colon
+ZMK_BEHAVIOR(csemi, mod_morph,
+    bindings = <&kp COMMA>, <&kp SEMI>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// tap: period | shift + tap: excl
+ZMK_BEHAVIOR(pcolon, mod_morph,
+    bindings = <&kp PERIOD>, <&kp COLON>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// // tap: comma | control + shift + tap: less_than
+// ZMK_BEHAVIOR(pcolon, mod_morph,
+//     bindings = <&kp COMMA>, <&kp LT>;
+//     mods = <(MOD_LCST|MOD_RCST)>;
+// )
+
 
 / {
 
@@ -80,7 +98,7 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
         then-layer = <UTIL>;
     };
     // cond_layer_maus {
-    //     if-layers = <SYM NUM>;
+qrqq    //     if-layers = <SYM NUM>;
     //     then-layer = <MAUS>;
     // };
   };
@@ -121,17 +139,17 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
 // ╰───────┴──────┴──╮────┴──────┴──────┤     ├──────┴──────┴─────╭─┴────────┴───────╯
 //                   │                  │     │      UTIL(6)      │
 //                   │ NAV(3) ┬ MAUS(4) │     │ NUM(2) ┬  FUNC(5) │
-//                   │  BSPC  │  SPACE  │     │ ENTER  │   TAB    │
+//                   │ SPACE  │  BSPC   │     │   TAB  │  ENTER   │
 //                   ╰────────┴─────────╯     ╰────────┴──────────╯
 //
 
     base_layer { // layer 0
       label = "base";
       bindings = <
-      &kp Q       &kp W       &kp F        &kp P        &kp B     &kp J &kp L       &kp U       &kp Y      &kp SQT
-      &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G     &kp M  &hmr RSHFT N  &hmr LCTRL E &hmr LALT I &hmr LGUI O
-      &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &kp COMMA    &kp PERIOD  &qexcl
-                                 &lt NAV BSPC  &lt MAUS SPACE     &lt NUM ENTER  &lt FUNC TAB
+      &kp Q       &kp W       &kp F        &kp P        &kp B     &kp J  &kp L         &kp U        &kp Y        &kp SQT
+      &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G     &kp M  &hmr RSHFT N  &hmr RCTRL E &hmr RALT I &hmr K_APP O
+      &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &csemi    &pcolon  &qexcl
+                                 &lt NAV SPACE  &lt MAUS BSPC     &lt NUM TAB  &lt FUNC ENTER
         >;
     };
 
