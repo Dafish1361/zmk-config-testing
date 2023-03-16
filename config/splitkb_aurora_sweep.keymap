@@ -82,17 +82,17 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// // tap: period | shift + tap: colon | ctrl + shift + tap: <
-// ZMK_BEHAVIOR(period_inner_morph, mod_morph,
-//     bindings = <&kp COLON>, <&kp LESS_THAN>;
-//     mods = <(MOD_LALT|MOD_RALT)>;
-// )
-//
-// // tap: period | shift + tap: colon | ctrl + shift + tap: >
-// ZMK_BEHAVIOR(period_inner_morph, mod_morph,
-//     bindings = <&kp COLON>, <&kp GREATER_THAN>;
-//     mods = <(MOD_LALT|MOD_RALT)>;
-// )
+// tap: period | shift + tap: semi | gui + shift + tap: <
+ZMK_BEHAVIOR(period_inner_morph, mod_morph,
+    bindings = <&kp SEMI>, <&kp LESS_THAN>;
+    mods = <(MOD_LGUI|MOD_RGUI)>;
+)
+
+// tap: period | shift + tap: colon | gui + shift + tap: >
+ZMK_BEHAVIOR(period_inner_morph, mod_morph,
+    bindings = <&kp COLON>, <&kp GREATER_THAN>;
+    mods = <(MOD_LGUI|MOD_RGUI)>;
+)
 
 
 / {
@@ -121,11 +121,10 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
 // ├───────┼─GRAVE─┼─BSLH─┼─EQUAL─│ TILDE─┤     ├─UNDER─┼─MINUS─┼─SLASH─┼─PIPE─┼──────┤
 // │       │       │      │       │       │     │       │       │       │      │      │
 // │       │    COPY    PASTE     │       │  B  │       │     LBKT     RBKT    │      │
-// ╰───────┴───────┴────╮─┴───────┴───────┤     ├───────┴───────┴───╭───┴──────┴──────╯
-//                      │                 │     │                   │
-//           LEFT       │        ┬        │  H  │        ┬          │     RIGHT
-//                      │        │        │     │        │          │
-//                      ╰────────┴────────╯     ╰────────┴──────────╯
+// ╰───────┴───────┴──────╮───────┴───────┤     ├───────┴───────╭───────┴──────┴──────╯
+//                        │       ┬       │  H  │       ┬       │
+//           LEFT         │       │       │     │       │       │    RIGHT
+//                        ╰───────┴───────╯     ╰───────┴───────╯
 //
 
 // 0 BASE LAYER
