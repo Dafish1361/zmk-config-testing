@@ -63,6 +63,19 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     hold-trigger-on-release;            // requires PR #1423
 )
 
+// mouse layer that deactivates automatically on all other keys, requires PR #1366
+ZMK_BEHAVIOR(smart_maus, tri_state,
+    bindings = <&tog MAUS>, <&none>, <&tog MAUS>;
+    ignored-key-positions = <RT1 RT2 RT3 RM1 RM2 RM3 RM4 RH0 RH1>;  // mouse keys
+    ignored-layers = <MAUS>;
+)
+
+
+// tap:  backspace | double-tap: sticky maus-layer | hold: maus-layer
+ZMK_BEHAVIOR(maus_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp BSPC>, <&smart_maus>;
+
 
 // tap: qmark | shift + tap: excl
 ZMK_BEHAVIOR(qexcl, mod_morph,
@@ -150,7 +163,7 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
       &kp Q       &kp W       &kp F        &kp P        &kp B     &kp J  &kp L         &kp U        &kp Y        &kp SQT
       &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G     &kp M  &hmr RSHFT N  &hmr RCTRL E &hmr RALT I &hmr K_APP O
       &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &csemi    &pcolon  &qexcl
-                                 &lt NAV SPACE  &lt MAUS BSPC     &lt NUM TAB  &lt FUNC ENTER
+                                 &lt NAV SPACE    &maus_dance     &lt NUM TAB  &lt FUNC ENTER
         >;
     };
 
