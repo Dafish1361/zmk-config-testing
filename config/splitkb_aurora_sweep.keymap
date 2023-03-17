@@ -95,16 +95,16 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// tap: period | shift + tap: semi | gui + shift + tap: <
+// tap: period | shift + tap: semi | alt + shift + tap: <
 ZMK_BEHAVIOR(comlt, mod_morph,
     bindings = <&kp COMMA>, <&kp LESS_THAN>;
-    mods = <(MOD_LGUI|MOD_RGUI)>;
+    mods = <(MOD_LALT|MOD_RALT)>;
 )
 
 // tap: period | shift + tap: colon | gui + shift + tap: >
 ZMK_BEHAVIOR(pergt, mod_morph,
     bindings = <&kp PERIOD>, <&kp GREATER_THAN>;
-    mods = <(MOD_LGUI|MOD_RGUI)>;
+    mods = <(MOD_LALT|MOD_RALT)>;
 )
 
 
