@@ -95,17 +95,17 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// // tap: period | shift + tap: semi | gui + shift + tap: <
-// ZMK_BEHAVIOR(period_inner_morph, mod_morph,
-//     bindings = <&kp COMMA>, <&kp LESS_THAN>;
-//     mods = <(MOD_LGUI|MOD_RGUI)>;
-// )
-//
-// // tap: period | shift + tap: colon | gui + shift + tap: >
-// ZMK_BEHAVIOR(period_inner_morph, mod_morph,
-//     bindings = <&kp PERIOD>, <&kp GREATER_THAN>;
-//     mods = <(MOD_LGUI|MOD_RGUI)>;
-// )
+// tap: period | shift + tap: semi | gui + shift + tap: <
+ZMK_BEHAVIOR(comlt, mod_morph,
+    bindings = <&kp COMMA>, <&kp LESS_THAN>;
+    mods = <(MOD_LGUI|MOD_RGUI)>;
+)
+
+// tap: period | shift + tap: colon | gui + shift + tap: >
+ZMK_BEHAVIOR(pergt, mod_morph,
+    bindings = <&kp PERIOD>, <&kp GREATER_THAN>;
+    mods = <(MOD_LGUI|MOD_RGUI)>;
+)
 
 
 / {
@@ -162,7 +162,7 @@ ZMK_BEHAVIOR(pcolon, mod_morph,
       bindings = <
       &kp Q       &kp W       &kp F        &kp P        &kp B     &kp J  &kp L         &kp U        &kp Y        &kp SQT
       &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G     &kp M  &hmr RSHFT N  &hmr RCTRL E &hmr RALT I &hmr K_APP O
-      &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &csemi    &pcolon  &qexcl
+      &kp Z       &kp X       &kp C        &kp D        &kp V     &kp K  &kp H         &comlt    &pergt  &qexcl
                                  &lt NAV SPACE    &maus_dance     &lt NUM TAB  &lt FUNC ENTER
         >;
     };
