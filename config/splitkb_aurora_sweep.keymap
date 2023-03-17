@@ -75,7 +75,7 @@ ZMK_BEHAVIOR(smart_maus, tri_state,
 ZMK_BEHAVIOR(maus_dance, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp BSPC>, <&smart_maus>;
-
+)
 
 // tap: qmark | shift + tap: excl
 ZMK_BEHAVIOR(qexcl, mod_morph,
